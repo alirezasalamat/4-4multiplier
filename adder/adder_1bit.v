@@ -3,7 +3,8 @@ module adder_1bit(a, b, cin, r, cout);
     output r, cout;
 
     wire a_not, b_not, not_cin;
-    wire r_and_layer[3:0], cout_and_layer[2:0];
+    wire [3:0] r_and_layer;
+    wire [2:0] cout_and_layer;
 
     not na(not_a, a),
         nb(not_b, b),
