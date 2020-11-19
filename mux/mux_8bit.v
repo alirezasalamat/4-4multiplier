@@ -1,4 +1,4 @@
-module mux_2bit(in0, in1, sel, out);
+module mux_8bit(in0, in1, sel, out);
     input [7:0] in0, in1;
     input sel;
     output [7:0] out;

@@ -1,7 +1,7 @@
 module multiplier_2bit(in_1, in_2, out);
 
     input [1:0] in_1, in_2;
-    output wire [3:0] out;
+    output [3:0] out;
 
     wire not_a0, not_a1, not_b0, not_b1;
 
@@ -32,6 +32,11 @@ module multiplier_2bit(in_1, in_2, out);
 
     //c3
     and and_8(out[3], in_1[0], in_1[1], in_2[0], in_2[1]);
+    
+    always @(out) begin
+        $display("%t: MULTIPLIER 2 BIT: OUT=%d", $time, out);    
+    end
+
 endmodule
 
 module test_multiplier_2bit();

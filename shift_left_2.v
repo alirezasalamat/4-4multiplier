@@ -1,6 +1,6 @@
 module shift_left_2(in, out);
     input [7:0] in;
-    output wire [7:0] out;
+    output [7:0] out;
 
     reg one = 1'b1, zero = 1'b0;
 

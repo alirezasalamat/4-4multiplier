@@ -2,11 +2,15 @@
 
 module controller(clk, rst, start, s0, s1, s2, sig_rst, ld1, ld2);
     input clk, rst, start;
-    output s0, s1, s2, sig_rst, ld1, ld2;
+    output  s0, s1, s2, sig_rst, ld1, ld2;
 
     wire [2:0] ps;
     state_machine sm(clk, rst, start, ps);
     signal_assigner sa(ps, s0, s1, s2, sig_rst, ld1, ld2);
+    
+    always @(ps) begin
+        $display("%t: CNTL_TEST: ps=%d", $time, ps);    
+    end
 endmodule
 
 module test_controller();

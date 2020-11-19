@@ -1,7 +1,7 @@
 module register_4bit(clk, rst, ld, in, out_1, out_2);
 
     input clk, rst, ld;
-    input [4:0] in;
+    input [3:0] in;
     output reg [1:0] out_1, out_2;
 
     always @(posedge clk or posedge rst) begin
@@ -19,7 +19,7 @@ endmodule
 module test_register_4bit();
 
     reg clk = 1'b0 , rst, ld;
-    reg [4:0] in;
+    reg [3:0] in;
     wire [1:0] out_1, out_2;
 
     register_4bit reg4(clk, rst, ld, in, out_1, out_2);

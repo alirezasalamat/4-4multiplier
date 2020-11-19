@@ -1,6 +1,6 @@
 module zero_extend(in, out);
     input [3:0] in;
-    output wire [7:0] out;
+    output [7:0] out;
 
     reg one = 1'b1, zero = 1'b0;
 
