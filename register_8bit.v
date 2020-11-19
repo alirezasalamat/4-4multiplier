@@ -1,4 +1,4 @@
-module register_8bit(clk, rst, in, out);
+module register_8bit(clk, rst, ld, in, out);
 
     input clk, rst;
     input [7:0] in;
@@ -8,7 +8,7 @@ module register_8bit(clk, rst, in, out);
         if(rst) begin
             out <= 8'b0;
         end
-        else begin
+        else if(ld) begin
             out <= in;
         end
     end
