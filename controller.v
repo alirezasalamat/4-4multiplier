@@ -1,12 +1,12 @@
 `timescale 1ns / 1ns
 
-module controller(clk, rst, start, s0, s1, s2, sig_rst, ld1, ld2);
+module controller(clk, rst, start, s0, s1, s2, sig_rst, ld1, ld2, ready);
     input clk, rst, start;
-    output  s0, s1, s2, sig_rst, ld1, ld2;
+    output  s0, s1, s2, sig_rst, ld1, ld2, ready;
 
     wire [2:0] ps;
     state_machine sm(clk, rst, start, ps);
-    signal_assigner sa(ps, s0, s1, s2, sig_rst, ld1, ld2);
+    signal_assigner sa(ps, s0, s1, s2, sig_rst, ld1, ld2, ready);
     
     always @(ps) begin
         $display("%t: CNTL_TEST: ps=%d", $time, ps);    

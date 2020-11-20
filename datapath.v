@@ -17,7 +17,7 @@ module datapath(a, b, clk, rst, ld_1, ld_2, s0, s1, s2, out);
     wire [7:0] out_zero_extend;
     zero_extend zero_extender(out_mul, out_zero_extend);
 
-    reg cin = 1'b1;
+    reg cin = 1'b0;
     wire cout;
     wire [7:0] out_mux_3;
     wire [7:0] out_adder;
@@ -29,5 +29,6 @@ module datapath(a, b, clk, rst, ld_1, ld_2, s0, s1, s2, out);
     wire [7:0] out_shifter;
     shift_left_2 shifter(out_reg_3, out_shifter);
 
-    mux_8bit mux_3(out_shifter, out_reg_3, s2, out_mux_3); 
+    mux_8bit mux_3(out_shifter, out_reg_3, s2, out_mux_3);
+    assign out = out_reg_3;
 endmodule
